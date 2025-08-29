@@ -33,3 +33,19 @@ def deposit(current_balance: float, amount: float) -> float:
         raise ValueError("Deposit amount must be positive.")
     else:
         return current_balance + amount
+    
+
+
+def add_transaction(current_balance: float, transaction_history: list[float]) -> list[float]:
+    """Updates the balance based on the type of transaction.
+
+    Args:
+        current_balance (float): The existing balance in the account.
+        transaction_history (list[float]): List of previous balances.
+
+    Returns:
+        list[float]: List of all balances after each transaction.
+    """
+
+    transaction_history.append(current_balance)
+    return transaction_history
